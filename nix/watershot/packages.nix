@@ -10,7 +10,7 @@ in {
     pname = cargo.package.name;
     version = cargo.package.version;
 
-    src = std.incl self [
+    src = (std.incl // {debug = true;}) self [
       "Cargo.toml"
       "Cargo.lock"
       "src"
